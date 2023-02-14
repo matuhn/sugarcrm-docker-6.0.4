@@ -1,0 +1,16 @@
+sugarcrm:
+  build: .
+  ports:
+    - "2080:80"
+  links:
+    - "db"
+  environment:
+    DB_TYPE: mysql
+    DB_MANAGER: MysqlManager
+db:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: sugarcrm_redteampro
+    MYSQL_DATABASE: sugarcrm
+    MYSQL_USER: sugarcrm
+    MYSQL_PASSWORD: sugarcrm_redteampro@
